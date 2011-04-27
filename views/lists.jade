@@ -1,0 +1,18 @@
+div#body
+	h3 Your list of list :
+
+	div#lists
+		ul.lists
+			- each list in lists
+				li.list
+					a(href=("/see_list/" + list.name)) #{list.name}
+
+	div#add_list
+		form(method="post", action="add")
+			fieldset
+				legend add a new list
+				p
+					label(for="new_list_name") name 
+						input(type="text", name="new_list_name", size="50")
+			p.buttons
+				input(type="submit", value="add!")

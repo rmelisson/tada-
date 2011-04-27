@@ -1,0 +1,47 @@
+body {
+  color: #000;  
+  background: #4d4433;
+  margin-top: 2.5em;
+  font-family: "Arial", "Helvetica", sans-serif;
+  font-size:20px;
+}
+
+#body{
+  background: #99CC33;
+  margin-left: auto; 
+  margin-right: auto;
+  width: 360px;
+}
+
+.lists {
+	background: #99CC33;	
+/* width: 360px; */
+	border: 3px solid rgb(225, 255, 181);
+}
+
+li {
+	list-style-type:none;
+/*	width : 50%;*/
+	text-align : center;
+	margin-bottom : 2px;
+}
+
+.elements {
+}
+
+.done {
+	background : rgb(153, 204, 51);
+	text-decoration:line-through;
+}
+
+.undone {
+	background : rgb(225, 255, 181);
+}
+
+.add_list {
+	
+}
+
+.add_element {
+	
+}
