@@ -1,22 +1,18 @@
-div#body
-	h3 #{list.name}
+div#title 
+	a(href="/") .. /  
+	span#list_title #{list.name}
 
-	div#back
-		a(href="/") go back
+div#elements	
+	ul.elements
+		- each element in list.elements
+			- if (element.done)
+				li.done 
+					a(href="/update/" + list.name + "/" + element.name) #{element.name}
+			- else 
+				li.undone 
+					a(href="/update/" + list.name + "/" + element.name) #{element.name}
 
-	div#elements	
-		ul.elements
-			- each element in list.elements
-				- if (element.done)
-					li.done 
-						a(href="/update/" + list.name + "/" + element.name) #{element.name}
-				- else 
-					li.undone 
-						a(href="/update/" + list.name + "/" + element.name) #{element.name}
-
-	span#add_element
-		form(method="post", action="/add_element/" + list.name + "/")
-			p add a new element : 
-			input(type="text", name="new_element_name", size="50")
-			buttons
-				input(type="submit", value="add!")
+div#add_element
+	form(method="post", action="/add_element/" + list.name + "/")
+			input(class="new_name", type="text", name="new_element_name", value="... element name", size="50")	
+			input(type="submit", value="add!", class="add_button")
