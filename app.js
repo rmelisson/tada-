@@ -86,9 +86,16 @@ app.post('/add_element/:list_name', function(req, res) {
 	// check it doesn't exist
 
 	var new_element = {name : req.body.new_element_name, done : false}
-	list = get_list_from_name(req.params.list_name)
+	var list = get_list_from_name(req.params.list_name)
 	list.elements.push(new_element)
 	update = true
+	display_elements(req, res)
+});
+
+app.get('/delete_element/:list_name/:element_name', function(req, res) {
+	var list = get_list_from_name(req.params.list_name)
+	//list.
+	console.log('delete ' + req.params.list_name + '/' + req.params.element_name)
 	display_elements(req, res)
 });
 
